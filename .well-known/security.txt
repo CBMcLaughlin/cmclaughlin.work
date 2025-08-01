@@ -1,0 +1,5 @@
+Contact: mailto:connor@cmclaughlin.work
+Encryption: https://cmclaughlin.work/pgp/public-key.asc
+Expires: 2027-07-19T03:01:14.000Z
+Preferred-Languages: en
+Canonical: https://cmclaughlin.work/.well-known/security.txt
