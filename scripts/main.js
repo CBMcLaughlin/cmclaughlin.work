@@ -1,10 +1,12 @@
 const scrollBar = document.getElementById("scroll-progress");
 const themeToggle = document.getElementById("theme-toggle");
-const navLinks = [...document.querySelectorAll(".top-nav nav a")];
-const sections = [...document.querySelectorAll("main section[id]")];
 const revealEls = [...document.querySelectorAll(".reveal")];
 const filterWrap = document.getElementById("experience-filter");
 const timelineItems = [...document.querySelectorAll(".timeline-item")];
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+const isPortraitCoarse = window.matchMedia(
+  "(orientation: portrait) and (pointer: coarse)"
+);
 
 function updateScrollProgress() {
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -12,36 +14,50 @@ function updateScrollProgress() {
   scrollBar.style.width = `${percent}%`;
 }
 
-function updateActiveNav() {
-  const offset = window.scrollY + 120;
-  let activeId = sections[0]?.id ?? "";
-
-  sections.forEach((section) => {
-    if (offset >= section.offsetTop) {
-      activeId = section.id;
-    }
-  });
-
-  navLinks.forEach((link) => {
-    const target = link.getAttribute("href")?.replace("#", "");
-    link.classList.toggle("active", target === activeId);
-  });
+function scrollPageToTop() {
+  window.scrollTo(0, 0);
 }
 
-function restoreTheme() {
-  const storedTheme = localStorage.getItem("cm-theme");
-  if (storedTheme === "light") {
-    document.body.classList.add("light");
-    themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-  }
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
 }
+scrollPageToTop();
+requestAnimationFrame(() => {
+  scrollPageToTop();
+  requestAnimationFrame(scrollPageToTop);
+});
+window.addEventListener("load", () => {
+  scrollPageToTop();
+  setTimeout(scrollPageToTop, 0);
+});
 
-function toggleTheme() {
-  const isLight = document.body.classList.toggle("light");
-  localStorage.setItem("cm-theme", isLight ? "light" : "dark");
+function setToggleIcon(isLight) {
+  if (!themeToggle) return;
   themeToggle.innerHTML = isLight
     ? '<i class="fa-solid fa-sun"></i>'
     : '<i class="fa-solid fa-moon"></i>';
+}
+
+/** Portrait phones: follow OS light/dark; ignore saved site preference. */
+function applySystemTheme() {
+  const shouldUseLight = !prefersDarkScheme.matches;
+  document.body.classList.toggle("light", shouldUseLight);
+  setToggleIcon(shouldUseLight);
+}
+
+/** Desktop / non-portrait-touch: use manual preference from localStorage. */
+function applyStoredDesktopTheme() {
+  const storedTheme = localStorage.getItem("cm-theme");
+  const shouldUseLight = storedTheme === "light";
+  document.body.classList.toggle("light", shouldUseLight);
+  setToggleIcon(shouldUseLight);
+}
+
+function toggleTheme() {
+  if (isPortraitCoarse.matches) return;
+  const isLight = document.body.classList.toggle("light");
+  localStorage.setItem("cm-theme", isLight ? "light" : "dark");
+  setToggleIcon(isLight);
 }
 
 function setupReveal() {
@@ -99,16 +115,33 @@ function setupTypedLine() {
   });
 }
 
-restoreTheme();
+if (isPortraitCoarse.matches) {
+  applySystemTheme();
+} else {
+  applyStoredDesktopTheme();
+}
+
+isPortraitCoarse.addEventListener("change", () => {
+  if (isPortraitCoarse.matches) {
+    applySystemTheme();
+  } else {
+    applyStoredDesktopTheme();
+  }
+});
+
+prefersDarkScheme.addEventListener("change", () => {
+  if (isPortraitCoarse.matches) {
+    applySystemTheme();
+  }
+});
+
 setupReveal();
 setupFilter();
 setupTypedLine();
 updateScrollProgress();
-updateActiveNav();
 
 window.addEventListener("scroll", () => {
   updateScrollProgress();
-  updateActiveNav();
 });
 
 themeToggle?.addEventListener("click", toggleTheme);
