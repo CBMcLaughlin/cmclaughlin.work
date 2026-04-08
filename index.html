@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Connor McLaughlin</title>
+    <title>Connor McLaughlin | IT Systems & Network Engineer</title>
+    <meta
+      name="description"
+      content="Personal resume site for Connor McLaughlin - systems administration, networking, security, and automation."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="styles/normalize.css" />
@@ -17,207 +21,223 @@
       src="https://kit.fontawesome.com/0de83e42cf.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="scripts/main.js" defer></script>
   </head>
 
   <body>
-    <main>
-      <header>
-        <h1>Connor McLaughlin</h1>
-        <a href="https://www.linkedin.com/in/connor-mclaughlin-3b89a4183/"
-          ><i class="fa-brands fa-linkedin"></i
-        ></a>
-      </header>
-      <hr />
-      <section id="skills">
-        <h2>SKILLS</h2>
-        <hr />
-        <ul>
-          <li>
-            <strong>Network Configuration / Administration</strong> (DHCP •
-            SLAAC • DNS • TCP/IP • VLAN)
-          </li>
-          <li>
-            <strong>Microsoft Technologies</strong> (Active Directory • EntraID
-            • SCCM • O365 • Windows)
-          </li>
-          <li>
-            <strong>Linux Configuration / Administration</strong> (RHEL9 •
-            Ubuntu • NixOS)
-          </li>
-          <li><strong>Virtualization</strong> (KVM • HyperV • Proxmox)</li>
-          <li><strong>Scripting</strong> (Powershell • Python)</li>
-        </ul>
-      </section>
-      <section id="certs">
-        <h2>CERTIFICATIONS</h2>
-        <hr />
-        <ul>
-          <li>
-            <strong>CompTIA Network+ ce</strong
-            ><span class="subText"
-              >- June 2024
-              <a
-                href="https://www.credly.com/badges/42e1aaf4-e360-490a-aa94-7adb4d442455/public_url"
-                >(verify)</a
-              ></span
-            >
-          </li>
-        </ul>
-      </section>
-      <section id="experience">
-        <h2>WORK EXPERIENCE</h2>
-        <hr />
-        <article>
-          <h3>
-            Bell Techlogix
-            <span class="subText">- May, 2025 - Present</span>
-          </h3>
-          <h4>
-            Deskside Support Engineer
-            <span class="subText"
-              >- L3Harris Contract | May, 2025 - Present (Mason, Ohio)</span
-            >
-          </h4>
-          <ul>
-            <li>
-              Operate customer-facing Tech Cafe providing Level 2 escalation
-              support, troubleshooting complex hardware/software failures,
-              network connectivity issues, and authentication problems that
-              require hands-on diagnosis beyond remote helpdesk capabilities
-            </li>
-            <li>
-              Manage workstation deployment process including Windows imaging,
-              driver installation, domain joining, and user profile setup while
-              maintaining Active Directory accounts and group memberships for
-              new hires and role changes
-            </li>
-            <li>
-              Handle asset tracking and inventory management for hardware
-              refresh cycles, coordinate equipment replacements, and document
-              all service requests and resolutions to maintain compliance with
-              contract requirements
-            </li>
-            <li>
-              Collaborate directly with vendor support teams and internal IT
-              departments to escalate unresolved issues, coordinate hardware
-              repairs under warranty, and implement patches or workarounds for
-              known system vulnerabilities
-            </li>
-          </ul>
-        </article>
-        <h3>
-          Atos / WebHelp <span class="subText">- July, 2019 - May, 2025 </span>
-        </h3>
-        <article>
-          <h4>
-            Level 3 IT Administrator
-            <span class="subText"
-              >- Northrop Grumman Contract | Sept, 2023 - May 2025
-              (Remote)</span
-            >
-          </h4>
-          <ul>
-            <li>
-              Conduct in-depth research, troubleshooting, diagnosis, and
-              documentation of novel and systematic issues within the IT
-              environment. Broad scope spanning OS (Windows), application,
-              network, and authentication based incidents.
-            </li>
-            <li>
-              Utilize PowerShell scripting to streamline workflows and common
-              tasks involving SCCM, Active Directory, and remote command
-              execution.
-            </li>
-          </ul>
-        </article>
-        <article>
-          <h4>
-            Level 2 IT Administrator
-            <span class="subText"
-              >- Siemens Healthineers, Entergy Contract | July, 2021 - Sept,
-              2023 (Remote)</span
-            >
-          </h4>
-          <ul>
-            <li>
-              Spearheaded comprehensive training for new hires, ensuring
-              adherence to team requirements, KPI measurements, and
-              environment-specific processes
-            </li>
-            <li>
-              Provided second level support for novel, complex issues that
-              required time and research to resolve.
-            </li>
-          </ul>
-        </article>
-        <article>
-          <h4>
-            Level 1 IT Administrator
-            <span class="subText"
-              >- City of San Diego Contract | July, 2019 - July, 2021 (Mason,
-              Ohio)</span
-            >
-          </h4>
-          <ul>
-            <li>
-              Streamlined helpdesk AD operations through a PowerShell TUI
-              resulting in team-wide improvements in call-handling time and
-              customer satisfaction metrics.
-            </li>
-            <li>
-              First point of contact handling volume of 30-40 calls/tickets
-              daily.
-            </li>
-          </ul>
-        </article>
-      </section>
-      <section id="projects">
-        <h2>HOMELAB PROJECTS</h2>
-        <hr />
-        <article>
-          <h3>Networking <span class="subText">- MikroTik (RouterOS)</span></h3>
-          <p>
-            Designed and implemented a comprehensive home network architecture
-            leveraging VLANs and subnet segmentation to isolate three distinct
-            zones: primary home network, public-facing services, and an IP
-            camera surveillance system. Deployed a complete dual-stack
-            environment by configuring IPv4 address pools with DHCP services
-            alongside IPv6 infrastructure utilizing NDP and prefix delegation.
-            Secured the network through L4 firewall rulesets that combine
-            stateless packet filtering and stateful connection tracking,
-            enabling precise inter-VLAN communication while maintaining strict
-            security boundaries between network segments.
-          </p>
-        </article>
-        <article>
-          <h3>
-            Server Administration
-            <span class="subText">- Dell PowerEdge, RHEL 9</span>
-          </h3>
-          <p>
-            Architected and maintain file storage infrastructure using NextCloud
-            on RHEL 9, deployed on enterprise-grade Dell PowerEdge hardware.
-            Enhanced system security through hardened SELinux policies while
-            enabling seamless access via Cloudflare Zero Trust tunneling,
-            effectively creating a private cloud storage solution with
-            enterprise-grade security and home-lab cost efficiency.
-          </p>
-        </article>
+    <div class="background-blobs" aria-hidden="true">
+      <span class="blob blob-a"></span>
+      <span class="blob blob-b"></span>
+      <span class="blob blob-c"></span>
+    </div>
+    <div class="scroll-progress" id="scroll-progress"></div>
 
-        <article>
-          <h3>
-            Cloud Infrastructure <span class="subText">- AWS, Nginx</span>
-          </h3>
-          <p>
-            Engineered and maintain a secure AWS LightSail deployment hosting a
-            <a href="https://edria.media">photography portfolio website</a>
-            using WordPress and Nginx on Debian. Implemented comprehensive email
-            security through Google Workspace integration, featuring complete
-            DMARC, DKIM, and SPF record configuration for enhanced
-            deliverability and anti-spoofing protection. Established robust
-            analytics tracking through Google Search Console integration for
-            performance monitoring and SEO optimization.
-          </p>
+    <header class="top-nav">
+      <a href="#hero" class="brand">CM</a>
+      <nav>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certs</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </header>
+
+    <main class="container">
+      <section id="hero" class="hero card reveal">
+        <p class="eyebrow">IT Systems Administration & Infrastructure</p>
+        <h1>Connor McLaughlin</h1>
+        <p class="typing-line">
+          <span id="typed-text"></span>
+        </p>
+        <p class="hero-summary">
+          Hands-on support engineer with 6+ years solving real-world endpoint,
+          network, and identity problems across enterprise environments.
+        </p>
+        <div class="hero-actions">
+          <a
+            class="button primary"
+            href="https://www.linkedin.com/in/connor-mclaughlin-3b89a4183/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a class="button ghost" href="#experience">View Experience</a>
+        </div>
+        <ul class="quick-stats">
+          <li><strong>6+</strong><span>Years in IT</span></li>
+          <li><strong>L1-L3</strong><span>Support Coverage</span></li>
+          <li><strong>Hybrid</strong><span>Remote + Onsite</span></li>
+        </ul>
+      </section>
+
+      <section id="skills" class="card reveal">
+        <h2>Core Skills</h2>
+        <div class="skill-grid">
+          <article>
+            <h3>Networking</h3>
+            <p>DHCP, SLAAC, DNS, TCP/IP, VLAN segmentation, firewalling</p>
+          </article>
+          <article>
+            <h3>Microsoft Ecosystem</h3>
+            <p>Active Directory, Entra ID, SCCM, O365, Windows administration</p>
+          </article>
+          <article>
+            <h3>Linux Administration</h3>
+            <p>RHEL 9, Ubuntu, NixOS, hardening, service operations</p>
+          </article>
+          <article>
+            <h3>Platform & Automation</h3>
+            <p>KVM, Hyper-V, Proxmox, PowerShell, Python scripting</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="card reveal">
+        <div class="section-title">
+          <h2>Work Experience</h2>
+          <div class="chip-group" id="experience-filter">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="onsite">Onsite</button>
+            <button class="chip" data-filter="remote">Remote</button>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item" data-mode="onsite">
+            <header>
+              <h3>Bell Techlogix</h3>
+              <p>Deskside Support Engineer</p>
+              <span>May 2025 - Present | Mason, Ohio</span>
+            </header>
+            <ul>
+              <li>
+                Operate a customer-facing Tech Cafe for Level 2 escalations
+                across hardware, software, network, and authentication issues.
+              </li>
+              <li>
+                Manage deployment lifecycle: imaging, drivers, domain join,
+                profile setup, and AD account/group administration.
+              </li>
+              <li>
+                Coordinate inventory, device replacement cycles, and
+                compliance-focused ticket documentation.
+              </li>
+              <li>
+                Partner with vendors and internal teams on deep escalations and
+                patch/workaround implementation.
+              </li>
+            </ul>
+          </article>
+
+          <article class="timeline-item" data-mode="remote">
+            <header>
+              <h3>Atos / WebHelp</h3>
+              <p>Level 3 IT Administrator</p>
+              <span>Sept 2023 - May 2025 | Northrop Grumman Contract</span>
+            </header>
+            <ul>
+              <li>
+                Investigated and documented novel and systemic incidents across
+                OS, app, networking, and authentication domains.
+              </li>
+              <li>
+                Built PowerShell automation workflows for SCCM, AD, and remote
+                command execution.
+              </li>
+            </ul>
+          </article>
+
+          <article class="timeline-item" data-mode="remote">
+            <header>
+              <h3>Atos / WebHelp</h3>
+              <p>Level 2 IT Administrator</p>
+              <span>July 2021 - Sept 2023 | Siemens + Entergy Contracts</span>
+            </header>
+            <ul>
+              <li>
+                Led onboarding and readiness training for new hires, aligned to
+                KPI and environment requirements.
+              </li>
+              <li>
+                Handled second-level escalation queues for complex,
+                research-heavy issues.
+              </li>
+            </ul>
+          </article>
+
+          <article class="timeline-item" data-mode="onsite">
+            <header>
+              <h3>Atos / WebHelp</h3>
+              <p>Level 1 IT Administrator</p>
+              <span>July 2019 - July 2021 | City of San Diego Contract</span>
+            </header>
+            <ul>
+              <li>
+                Built a PowerShell TUI that improved helpdesk AD operations and
+                reduced handling time.
+              </li>
+              <li>
+                Served as first-line support, managing 30-40 calls/tickets per
+                day.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="card reveal">
+        <h2>Homelab Projects</h2>
+        <div class="project-grid">
+          <article class="project">
+            <h3>Networking</h3>
+            <p class="project-meta">MikroTik (RouterOS)</p>
+            <p>
+              Architected segmented VLAN/subnet topology for home, services, and
+              camera zones. Implemented dual-stack routing, DHCP + IPv6
+              delegation, and layered firewall policy to balance isolation and
+              controlled inter-zone communication.
+            </p>
+          </article>
+          <article class="project">
+            <h3>Server Administration</h3>
+            <p class="project-meta">Dell PowerEdge, RHEL 9</p>
+            <p>
+              Deployed and maintain NextCloud with SELinux hardening and
+              Cloudflare Zero Trust access, delivering private cloud utility
+              with enterprise-style controls in a homelab footprint.
+            </p>
+          </article>
+          <article class="project">
+            <h3>Cloud Infrastructure</h3>
+            <p class="project-meta">AWS, Nginx, Debian</p>
+            <p>
+              Operate a secure Lightsail-hosted WordPress stack and integrated
+              email security with DMARC, DKIM, and SPF while tracking
+              performance through Search Console analytics.
+              <a href="https://edria.media" target="_blank" rel="noreferrer"
+                >View site</a
+              >.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="certs" class="card reveal">
+        <h2>Certifications</h2>
+        <article class="cert-item">
+          <h3>CompTIA Network+ ce</h3>
+          <p>Issued June 2024</p>
+          <a
+            href="https://www.credly.com/badges/42e1aaf4-e360-490a-aa94-7adb4d442455/public_url"
+            target="_blank"
+            rel="noreferrer"
+            >Verify Credential</a
+          >
         </article>
       </section>
     </main>
